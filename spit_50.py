@@ -27,21 +27,8 @@ def split_pdf(input_pdf, output_dir):
 
         print(f"Created: {output_file}")
 
-    process_with_marker(output_dir)
+#    process_with_marker(output_dir)
 
-def process_with_marker(output_dir):
-    """
-    Processes all PDFs in the output directory using marker_single.
-
-    :param output_dir: Directory containing the split PDFs.
-    """
-    pdf_files = sorted([f for f in os.listdir(output_dir) if f.endswith('.pdf')], key=lambda x: int(x.split('.')[0]))
-
-    for pdf_file in pdf_files:
-        pdf_path = os.path.join(output_dir, pdf_file)
-        command = f"marker_single {pdf_path}"
-        print(f"Executing: {command}")
-        os.system(command)
 
 def combine_md_files(input_dir, output_file):
     """
@@ -66,12 +53,12 @@ def combine_md_files(input_dir, output_file):
     print(f"Combined .md files into: {output_file}")
 
 if __name__ == "__main__":
-    input_pdf_path = input("Enter the path to the input PDF file: ").strip()
-    output_directory = input("Enter the directory to save split PDFs: ").strip()
+    input_pdf_path = "/home/ubuntu/needl-ai/sandbox/samir/temp"
+    output_directory = "/home/ubuntu/needl-ai/sandbox/samir/temp/L&T"
 
     split_pdf(input_pdf_path, output_directory)
 
-    conversion_results_dir = input("Enter the path to the conversion results directory: ").strip()
-    combined_md_output = input("Enter the path for the combined .md output file: ").strip()
+    # conversion_results_dir = input("Enter the path to the conversion results directory: ").strip()
+    # combined_md_output = input("Enter the path for the combined .md output file: ").strip()
 
-    combine_md_files(conversion_results_dir, combined_md_output)
+    # combine_md_files(conversion_results_dir, combined_md_output)
