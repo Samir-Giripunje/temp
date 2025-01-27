@@ -53,8 +53,8 @@ def combine_md_files(input_dir, output_file):
     print(f"Combined .md files into: {output_file}")
 
 if __name__ == "__main__":
-    input_pdf_path = "needl-ai/sandbox/samir/temp"
-    output_directory = "needl-ai/sandbox/samir/temp/L&T"
+    input_pdf_path = "temp/L&T Annual Report.pdf"
+    output_directory = "temp/L&T"
 
     split_pdf(input_pdf_path, output_directory)
 
